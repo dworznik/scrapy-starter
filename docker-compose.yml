@@ -1,0 +1,16 @@
+version: '2'
+services:
+  scrapyd:
+    build:
+      args:
+        - BASIC_AUTH=$BASIC_AUTH
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '6800:6800'
+    expose:
+      - 6800
+    volumes:
+      - scrapyd-data:/var/lib/scrapyd
+volumes:
+  scrapyd-data:
