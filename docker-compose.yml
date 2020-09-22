@@ -3,7 +3,8 @@ services:
   scrapyd:
     build:
       args:
-        - BASIC_AUTH=$BASIC_AUTH
+        - USER_BASIC_AUTH=$USER_BASIC_AUTH
+        - ADMIN_BASIC_AUTH=$ADMIN_BASIC_AUTH
       context: .
       dockerfile: Dockerfile
     ports:
